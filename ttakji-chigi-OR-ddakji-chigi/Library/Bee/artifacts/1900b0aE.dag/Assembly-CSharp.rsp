@@ -378,8 +378,11 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
-"Assets/Scripts/Gauge.cs"
-"Assets/Scripts/TtakjiManager.cs"
+"Assets/howan/Marble/Scripts/Marble.cs"
+"Assets/howan/Marble/Scripts/Mouse.cs"
+"Assets/howan/Marble/Scripts/Zone.cs"
+"Assets/howan/Ttakji/Scripts/Gauge.cs"
+"Assets/howan/Ttakji/Scripts/TtakjiManager.cs"
 -langversion:9.0
 
 /deterministic
