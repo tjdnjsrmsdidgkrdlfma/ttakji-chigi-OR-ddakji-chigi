@@ -42,7 +42,7 @@ public class Marble : MonoBehaviour
             on_process = false;
             last_position = mouse_position.transform.position;
             Vector2 temp = first_position - last_position;
-            rigidbody2d.velocity = temp * 10;
+            rigidbody2d.velocity = temp * 5;
         }
     }
 

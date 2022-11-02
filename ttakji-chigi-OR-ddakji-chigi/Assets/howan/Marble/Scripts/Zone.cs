@@ -4,30 +4,22 @@ using UnityEngine;
 
 public class Zone : MonoBehaviour
 {
-    bool marbles_on_zone;
+    int left_marble;
 
     void Awake()
     {
-        marbles_on_zone = false;
+        left_marble = 3;
     }
 
     void Update()
     {
-        if(marbles_on_zone==true)
-        {
-            Debug.Log("Safe");
-        }
-        else
-        {
-            Debug.Log("Out");
-        }
-
-        marbles_on_zone = false;
+        if (left_marble == 0)
+            Debug.Log("NothingOnZone");
     }
 
-    void OnTriggerStay2D(Collider2D other)
+    void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Marble") == true)
-            marbles_on_zone = true;
+            left_marble--;
     }
 }
