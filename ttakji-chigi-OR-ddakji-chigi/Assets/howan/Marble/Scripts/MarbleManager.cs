@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class MarbleManager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class MarbleManager : MonoBehaviour
 
     GameObject playmarble_prefab;
     GameObject[] marbles;
+    TextMeshProUGUI left_marble_number;
 
     void Awake()
     {
@@ -15,6 +17,7 @@ public class MarbleManager : MonoBehaviour
 
         playmarble_prefab = Resources.Load("Marble/PlayMarble") as GameObject;
         marbles = GameObject.FindGameObjectsWithTag("Marble");
+        left_marble_number = GameObject.Find("Canvas/LeftMarbleNumber").GetComponent<TextMeshProUGUI>();
 
         SetPosition();
     }
@@ -38,6 +41,7 @@ public class MarbleManager : MonoBehaviour
         if (max_create_marble > 0)
         {
             max_create_marble--;
+            left_marble_number.text = "X" + max_create_marble;
             Instantiate(playmarble_prefab, new Vector2(0, -2.5f), Quaternion.identity);
         }
     }
