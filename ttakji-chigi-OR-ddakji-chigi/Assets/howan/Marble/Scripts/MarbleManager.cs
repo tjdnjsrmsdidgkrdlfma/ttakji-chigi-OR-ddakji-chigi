@@ -7,12 +7,30 @@ public class MarbleManager : MonoBehaviour
     float max_create_marble;
 
     GameObject playmarble_prefab;
+    GameObject[] marbles;
 
     void Awake()
     {
         max_create_marble = 2;
 
         playmarble_prefab = Resources.Load("Marble/PlayMarble") as GameObject;
+        marbles = GameObject.FindGameObjectsWithTag("Marble");
+
+        SetPosition();
+    }
+
+    void SetPosition()
+    {
+        float x_coordinate;
+        float y_coordinate;
+
+        for (int i = 0; i < 3; i++)
+        {
+            x_coordinate = Random.Range(-2.06f, 2.06f);
+            y_coordinate = Mathf.Sqrt((2.06f * 2.06f) - (x_coordinate * x_coordinate));
+
+            marbles[i].transform.position = new Vector2(x_coordinate, y_coordinate + 0.6875f);
+        }
     }
 
     public void CreateMarble()

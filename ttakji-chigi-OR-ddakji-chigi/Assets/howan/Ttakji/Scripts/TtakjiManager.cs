@@ -54,11 +54,11 @@ public class TtakjiManager : MonoBehaviour
             yield return null;
         }
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.1f);
 
         blink.SetActive(true);
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.25f);
 
         blink.SetActive(false);
 
