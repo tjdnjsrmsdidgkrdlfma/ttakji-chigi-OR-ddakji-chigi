@@ -1276,10 +1276,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayMarble
       objectReference: {fileID: 0}
-    - target: {fileID: 2488149199886430291, guid: c8c841f1a0541ec41853727d91451966, type: 3}
-      propertyPath: m_TagString
-      value: PlayMarble
-      objectReference: {fileID: 0}
     - target: {fileID: 6113782581960829996, guid: c8c841f1a0541ec41853727d91451966, type: 3}
       propertyPath: m_RootOrder
       value: 5
