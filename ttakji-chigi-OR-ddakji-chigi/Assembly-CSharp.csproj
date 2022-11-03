@@ -56,13 +56,16 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\howan\Marble\Scripts\MarbleManager.cs" />
-    <Compile Include="Assets\howan\Marble\Scripts\Zone.cs" />
-    <Compile Include="Assets\howan\Ttakji\Scripts\TtakjiManager.cs" />
-    <Compile Include="Assets\howan\Marble\Scripts\Mouse.cs" />
-    <Compile Include="Assets\howan\Marble\Scripts\Marble.cs" />
-    <Compile Include="Assets\howan\Marble\Scripts\Wall.cs" />
-    <Compile Include="Assets\howan\Ttakji\Scripts\Gauge.cs" />
+    <Compile Include="Assets\Marble\Scripts\MarbleManager.cs" />
+    <Compile Include="Assets\Marble\Scripts\Zone.cs" />
+    <Compile Include="Assets\Flower\Scripts\End.cs" />
+    <Compile Include="Assets\Ttakji\Scripts\TtakjiManager.cs" />
+    <Compile Include="Assets\Marble\Scripts\Mouse.cs" />
+    <Compile Include="Assets\Marble\Scripts\Marble.cs" />
+    <Compile Include="Assets\Flower\Scripts\FlowerManager.cs" />
+    <Compile Include="Assets\Flower\Scripts\Up.cs" />
+    <Compile Include="Assets\Marble\Scripts\Wall.cs" />
+    <Compile Include="Assets\Ttakji\Scripts\Gauge.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
