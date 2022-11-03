@@ -64,7 +64,7 @@ public class FlowerManager : MonoBehaviour
 
             if (is_front == true)
             {
-                yield return new WaitForSeconds(time_to_flip);
+                yield return new WaitForSeconds(time_to_flip / 2);
                 go.SetActive(true);
                 stop.SetActive(false);
                 face.sprite = Resources.Load<Sprite>("Flower/BackFace");

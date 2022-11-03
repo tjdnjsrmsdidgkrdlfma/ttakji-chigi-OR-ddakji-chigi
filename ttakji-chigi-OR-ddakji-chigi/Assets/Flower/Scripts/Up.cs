@@ -11,7 +11,7 @@ public class Up : MonoBehaviour
 
     void Awake()
     {
-        move_distance = 0.001f;
+        move_distance = 0.002f;
         is_walking = false;
 
         animator = GetComponent<Animator>();
