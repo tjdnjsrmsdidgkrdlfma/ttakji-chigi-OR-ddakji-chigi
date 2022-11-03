@@ -7,11 +7,9 @@ using UnityEngine.PlayerLoop;
 public class FlowerManager : MonoBehaviour
 {
     public bool is_front;
-    bool on_game;
     int fire_state;
 
     GameObject player;
-    GameObject fail;
     GameObject face_;
     GameObject go;
     GameObject stop;
@@ -24,11 +22,9 @@ public class FlowerManager : MonoBehaviour
     void Awake()
     {
         is_front = false;
-        on_game = true;
         fire_state = 0;
 
         player = GameObject.Find("Player");
-        fail = GameObject.Find("Canvas").transform.Find("Fail").gameObject;
         face_ = GameObject.Find("Monster").transform.Find("Face").gameObject;
         go = GameObject.Find("Lights").transform.Find("Go").gameObject;
         stop = GameObject.Find("Lights").transform.Find("Stop").gameObject;
@@ -54,7 +50,7 @@ public class FlowerManager : MonoBehaviour
             player.GetComponent<Up>().enabled = false;
             player.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Flower/Death");
             StopFlipFace();
-            fail.SetActive(true);
+            ShowResult(false);
         }
     }
 
@@ -112,5 +108,32 @@ public class FlowerManager : MonoBehaviour
     public void StopFlipFace()
     {
         StopCoroutine(flip_face);
+    }
+
+    public void ShowResult(bool did_it)
+    {
+        GameObject success = GameObject.Find("Canvas").transform.Find("Success").gameObject;
+        GameObject fail = GameObject.Find("Canvas").transform.Find("Fail").gameObject;
+
+        if (did_it == true)
+            success.SetActive(true);
+        else
+            fail.SetActive(true);
+
+        StartCoroutine(ShowButton());
+    }
+
+    IEnumerator ShowButton()
+    {
+        GameObject restart = GameObject.Find("Canvas").transform.Find("Restart").gameObject;
+        GameObject main = GameObject.Find("Canvas").transform.Find("Main").gameObject;
+
+        yield return new WaitForSeconds(0.5f);
+
+        restart.SetActive(true);
+
+        yield return new WaitForSeconds(0.5f);
+
+        main.SetActive(true);
     }
 }

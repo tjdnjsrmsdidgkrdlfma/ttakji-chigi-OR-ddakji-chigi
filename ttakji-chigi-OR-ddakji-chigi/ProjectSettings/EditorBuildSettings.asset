@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/NotGame/StartScreen/Scenes/StartScreen.unity
+    guid: b7005e8242569784bb1b0c51f88ef9af
+  - enabled: 1
+    path: Assets/NotGame/ChooseGame/Scenes/ChooseGame.unity
+    guid: 8d7baf47f3cebea4b9ccf2d80c240f92
+  - enabled: 1
+    path: Assets/Flower/Scenes/Flower.unity
+    guid: f6954edf5712a3d48b178a592d8cf884
+  - enabled: 1
+    path: Assets/Marble/Scenes/Marble.unity
+    guid: b255bd34036ff6d4fbb56a2ee73209c1
+  - enabled: 1
     path: Assets/Ttakji/Scenes/Ttakji.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}

@@ -8,6 +8,8 @@ public class TtakjiManager : MonoBehaviour
     GameObject ttakji1;
     GameObject gauge;
     GameObject blink;
+    GameObject success;
+    GameObject fail;
 
     void Awake()
     {
@@ -15,6 +17,8 @@ public class TtakjiManager : MonoBehaviour
         ttakji1 = GameObject.Find("Ttakji1");
         gauge = GameObject.Find("Gauge/Gauge");
         blink = GameObject.Find("Canvas").transform.Find("Blink").gameObject;
+        success = GameObject.Find("Canvas").transform.Find("Success").gameObject;
+        fail = GameObject.Find("Canvas").transform.Find("Fail").gameObject;
     }
 
     public void OnTtakjiMoveButtonClicked()
@@ -35,6 +39,7 @@ public class TtakjiManager : MonoBehaviour
             yield return null;
         }
 
+        //ttakji1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Ttakji/TtakjiBack1");
         yield return new WaitForSeconds(0.1f);
 
         for (int i = 0; i < 50; i++)
@@ -92,27 +97,53 @@ public class TtakjiManager : MonoBehaviour
     IEnumerator ShowEffect()
     {
         float gauge = this.gauge.GetComponent<Gauge>().gauge;
+        int i;
 
         GameObject effect = GameObject.Find("Ttakji0/Effect");
 
         if (gauge > 0.85f)
-        {
             effect.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Ttakji/Success");
-        }
         else
-        {
             effect.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Ttakji/Fail");
-        }
 
-        for (int i = 0; i < 30; i++)
+        Invoke("ShowResult", 1.5f);
+
+        i = 0;
+        
+        while (true)
         {
             effect.transform.Rotate(new Vector3(0, 0, i * 5));
             yield return null;
             yield return null;
             yield return null;
             yield return null;
+            i++;
         }
+    }
 
-        effect.GetComponent<SpriteRenderer>().sprite = null;
+    void ShowResult()
+    {
+        float gauge = this.gauge.GetComponent<Gauge>().gauge;
+
+        if (gauge > 0.85f)
+            success.SetActive(true);
+        else
+            fail.SetActive(true);
+
+        StartCoroutine(ShowButton());
+    }
+
+    IEnumerator ShowButton()
+    {
+        GameObject restart = GameObject.Find("Canvas").transform.Find("Restart").gameObject;
+        GameObject main = GameObject.Find("Canvas").transform.Find("Main").gameObject;
+
+        yield return new WaitForSeconds(0.5f);
+
+        restart.SetActive(true);
+
+        yield return new WaitForSeconds(0.5f);
+
+        main.SetActive(true);
     }
 }
