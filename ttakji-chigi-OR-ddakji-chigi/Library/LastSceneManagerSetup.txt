@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Flower/Scenes/Flower.unity
+- path: Assets/NotGame/StartScreen/Scenes/StartScreen.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
