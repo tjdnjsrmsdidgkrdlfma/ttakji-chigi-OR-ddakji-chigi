@@ -2,22 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 
 public class MarbleManager : MonoBehaviour
 {
     public float max_create_marble;
+    bool once;
 
     GameObject playmarble_prefab;
     GameObject[] marbles;
     TextMeshProUGUI left_marble_number;
+    AudioSource marble_bgm;
+    AudioSource audiosource;
 
     void Awake()
     {
         max_create_marble = 2;
+        once = false;
 
         playmarble_prefab = Resources.Load("Marble/PlayMarble") as GameObject;
         marbles = GameObject.FindGameObjectsWithTag("Marble");
         left_marble_number = GameObject.Find("Canvas/LeftMarbleNumber").GetComponent<TextMeshProUGUI>();
+        marble_bgm = GameObject.Find("MarbleBGM").GetComponent<AudioSource>();
+        audiosource = GameObject.Find("Temp").GetComponent<AudioSource>();
 
         SetPosition();
     }
@@ -48,14 +55,27 @@ public class MarbleManager : MonoBehaviour
 
     public void ShowResult(bool did_it)
     {
+        if (once == true)
+            return;
+
+        once = true;
+
         GameObject success = GameObject.Find("Canvas").transform.Find("Success").gameObject;
         GameObject fail = GameObject.Find("Canvas").transform.Find("Fail").gameObject;
 
-        if(did_it == true)
-            success.SetActive(true);
-        else
-            fail.SetActive(true);
+        marble_bgm.Stop();
 
+        if (did_it == true)
+        {
+            success.SetActive(true);
+            audiosource.PlayOneShot(Resources.Load("SuccessSound") as AudioClip);
+        }
+        else
+        {
+            fail.SetActive(true);
+            audiosource.PlayOneShot(Resources.Load("FailSound") as AudioClip);
+        }
+            
         StartCoroutine(ShowButton());
     }
 

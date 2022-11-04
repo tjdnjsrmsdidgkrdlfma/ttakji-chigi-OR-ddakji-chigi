@@ -69,6 +69,8 @@
     <Compile Include="Assets\Marble\Scripts\Wall.cs" />
     <Compile Include="Assets\Ttakji\Scripts\Gauge.cs" />
     <Compile Include="Assets\NotGame\EndGameManager.cs" />
+    <Compile Include="Assets\Rope\Scripts\_1button.cs" />
+    <Compile Include="Assets\Rope\Scripts\Button.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

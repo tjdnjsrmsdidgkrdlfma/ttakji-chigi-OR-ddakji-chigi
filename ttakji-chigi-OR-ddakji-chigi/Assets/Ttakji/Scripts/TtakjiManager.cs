@@ -10,6 +10,8 @@ public class TtakjiManager : MonoBehaviour
     GameObject blink;
     GameObject success;
     GameObject fail;
+    AudioSource ttakji_bgm;
+    AudioSource audiosource;
 
     void Awake()
     {
@@ -19,6 +21,13 @@ public class TtakjiManager : MonoBehaviour
         blink = GameObject.Find("Canvas").transform.Find("Blink").gameObject;
         success = GameObject.Find("Canvas").transform.Find("Success").gameObject;
         fail = GameObject.Find("Canvas").transform.Find("Fail").gameObject;
+        ttakji_bgm = GameObject.Find("TtakjiBGM").GetComponent<AudioSource>();
+        audiosource = GameObject.Find("AudioSource").GetComponent<AudioSource>();
+    }
+
+    void Start()
+    {
+        ttakji_bgm.Play();
     }
 
     public void OnTtakjiMoveButtonClicked()
@@ -40,6 +49,7 @@ public class TtakjiManager : MonoBehaviour
         }
 
         //ttakji1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Ttakji/TtakjiBack1");
+        audiosource.PlayOneShot(Resources.Load("Ttakji/TtakjiHit") as AudioClip);
         yield return new WaitForSeconds(0.1f);
 
         for (int i = 0; i < 50; i++)
@@ -48,6 +58,8 @@ public class TtakjiManager : MonoBehaviour
             ttakji0.transform.position = new Vector3(ttakji0.transform.position.x, temp, ttakji0.transform.position.z);
             yield return null;
         }
+
+        audiosource.PlayOneShot(Resources.Load("Ttakji/TtakjiWind") as AudioClip);
 
         for (int i = 0; i < 15; i++)
         {
@@ -75,6 +87,8 @@ public class TtakjiManager : MonoBehaviour
             ttakji0.transform.position = new Vector3(ttakji0.transform.position.x, ttakji0.transform.position.y - 0.2f, ttakji0.transform.position.z);
             yield return null;
         }
+
+        audiosource.PlayOneShot(Resources.Load("Ttakji/TtakjiDrop") as AudioClip);
 
         yield return new WaitForSeconds(0.5f);
 
@@ -109,7 +123,7 @@ public class TtakjiManager : MonoBehaviour
         Invoke("ShowResult", 1.5f);
 
         i = 0;
-        
+
         while (true)
         {
             effect.transform.Rotate(new Vector3(0, 0, i * 5));
@@ -125,10 +139,18 @@ public class TtakjiManager : MonoBehaviour
     {
         float gauge = this.gauge.GetComponent<Gauge>().gauge;
 
+        ttakji_bgm.Stop();
+
         if (gauge > 0.85f)
+        {
             success.SetActive(true);
+            audiosource.PlayOneShot(Resources.Load("SuccessSound") as AudioClip);
+        }
         else
+        {
             fail.SetActive(true);
+            audiosource.PlayOneShot(Resources.Load("FailSound") as AudioClip);
+        } 
 
         StartCoroutine(ShowButton());
     }

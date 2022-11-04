@@ -10,18 +10,18 @@ public class Marble : MonoBehaviour
     Vector2 first_position;
     Vector2 last_position;
 
-    Rigidbody2D rigidbody2d;
-
     GameObject mouse_position;
+    Rigidbody2D rigidbody2d;
+    AudioSource audiosource;
 
     void Awake()
     {
         mouse = false;
         on_process = false;
 
-        rigidbody2d = GetComponent<Rigidbody2D>();
-
         mouse_position = GameObject.Find("Mouse");
+        rigidbody2d = GetComponent<Rigidbody2D>();
+        audiosource = GameObject.Find("Temp").GetComponent<AudioSource>();
     }
 
     void Update()
@@ -51,9 +51,14 @@ public class Marble : MonoBehaviour
             mouse = true;
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Mouse") == true)
             mouse = false;
+    }
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Marble") == true)
+            audiosource.PlayOneShot(Resources.Load("Marble/MarbleHit") as AudioClip);
     }
 }
