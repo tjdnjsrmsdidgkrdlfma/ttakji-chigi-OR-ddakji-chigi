@@ -6,6 +6,7 @@ public class Marble : MonoBehaviour
 {
     bool mouse;
     bool on_process;
+    bool lunched;
 
     Vector2 first_position;
     Vector2 last_position;
@@ -18,6 +19,7 @@ public class Marble : MonoBehaviour
     {
         mouse = false;
         on_process = false;
+        lunched = false;
 
         mouse_position = GameObject.Find("Mouse");
         rigidbody2d = GetComponent<Rigidbody2D>();
@@ -26,7 +28,8 @@ public class Marble : MonoBehaviour
 
     void Update()
     {
-        LauncheMarble();
+        if (lunched == false)
+            LauncheMarble();
     }
 
     void LauncheMarble()
@@ -38,6 +41,7 @@ public class Marble : MonoBehaviour
         }
         if (Input.GetMouseButtonUp(0) == true && mouse == false && on_process == true)
         {
+            lunched = true;
             on_process = false;
             last_position = mouse_position.transform.position;
             Vector2 temp = first_position - last_position;

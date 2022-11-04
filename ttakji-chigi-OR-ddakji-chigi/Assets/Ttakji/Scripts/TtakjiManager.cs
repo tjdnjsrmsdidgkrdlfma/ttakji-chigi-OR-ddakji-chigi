@@ -13,8 +13,12 @@ public class TtakjiManager : MonoBehaviour
     AudioSource ttakji_bgm;
     AudioSource audiosource;
 
+    bool clicked; 
+
     void Awake()
     {
+        clicked = false;
+
         ttakji0 = GameObject.Find("Ttakji0");
         ttakji1 = GameObject.Find("Ttakji1");
         gauge = GameObject.Find("Gauge/Gauge");
@@ -32,9 +36,14 @@ public class TtakjiManager : MonoBehaviour
 
     public void OnTtakjiMoveButtonClicked()
     {
-        gauge.GetComponent<Gauge>().stop_gauge_moving = true;
+        if (clicked == false)
+        {
+            clicked = true;
 
-        StartCoroutine("MoveTtakji");
+            gauge.GetComponent<Gauge>().stop_gauge_moving = true;
+
+            StartCoroutine("MoveTtakji");
+        }
     }
 
     IEnumerator MoveTtakji()
