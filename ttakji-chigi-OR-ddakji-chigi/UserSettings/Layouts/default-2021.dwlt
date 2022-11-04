@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Game
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 127
+  controlID: 16
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -363,7 +363,7 @@ MonoBehaviour:
     m_VAllowExceedBaseRangeMax: 1
     m_ScaleWithWindow: 0
     m_HSlider: 0
-    m_VSlider: 1
+    m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
     m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
@@ -376,7 +376,7 @@ MonoBehaviour:
       y: 21
       width: 623
       height: 602
-    m_Scale: {x: 0.25958332, y: 0.25958332}
+    m_Scale: {x: 0.25083333, y: 0.25083333}
     m_Translation: {x: 311.5, y: 301}
     m_MarginLeft: 0
     m_MarginRight: 0
@@ -384,12 +384,12 @@ MonoBehaviour:
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -1200
-      y: -1159.5507
-      width: 2400
-      height: 2319.1013
+      x: -1241.8605
+      y: -1200
+      width: 2483.721
+      height: 2400
     m_MinimalGUI: 1
-  m_defaultScale: 0.25958332
+  m_defaultScale: 0.25083333
   m_LastWindowPixelSize: {x: 623, y: 623}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
@@ -429,7 +429,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 96f5ffffeaf5ffff04f6ffff0af6ffff0ef6ffff12f6ffff42f6ffff46f6ffff4af6ffff4ef6ffff6cf7ffffc6f7ffff20f9ffff28f9ffff2ef9ffff32f9ffff6ef9ffff78f9ffff7ef9ffff84f9ffff26fbffff
+      m_ExpandedIDs: 5af2ffffa6f2ffff00f4ffff08f4ffff0ef4ffff16f4ffff52f4ffff5ef4ffff62f4ffff68f4ffffc2f9ffff26fbffff56620000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -733,9 +733,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -47.302406, y: 1199.0784, z: -10.4445505}
+    m_Target: {x: 0, y: 0, z: 0}
     speed: 2
-    m_Value: {x: -47.302406, y: 1199.0784, z: -10.4445505}
+    m_Value: {x: 0, y: 0, z: 0}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -786,9 +786,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 1054.4559
+    m_Target: 10
     speed: 2
-    m_Value: 1054.4559
+    m_Value: 10
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -918,36 +918,36 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Resources/Ttakji
+    - Assets/Rope/Scenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Resources/Ttakji
+  - Assets/Rope/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\werwer\ttakji-chigi-OR-ddakji-chigi\ttakji-chigi-OR-ddakji-chigi
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 286}
-    m_SelectedIDs: 04610000
-    m_LastClickedID: 24836
+    scrollPos: {x: 0, y: 226}
+    m_SelectedIDs: 06610000
+    m_LastClickedID: 24838
     m_ExpandedIDs: 00000000d4600000d6600000d8600000da600000dc600000de600000e0600000e2600000e460000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Scripts
+      m_OriginalName: Scripts
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 24816
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 11}
     m_SearchString: 
@@ -988,7 +988,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c623000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1111,7 +1111,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 340
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:

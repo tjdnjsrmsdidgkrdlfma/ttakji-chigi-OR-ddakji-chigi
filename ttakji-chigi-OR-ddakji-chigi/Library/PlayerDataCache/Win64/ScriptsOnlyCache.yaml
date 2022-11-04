@@ -20,6 +20,7 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
+    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
     - UnityEditor.Tilemaps.GridPaintingState
@@ -105,6 +106,9 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: ChooseGameManager
     methodName: MarbleButtonClicked
+  - assembly: Assembly-CSharp
+    fullTypeName: ChooseGameManager
+    methodName: RopeButtonClicked
   - assembly: Assembly-CSharp
     fullTypeName: ChooseGameManager
     methodName: FlowerButtonClicked

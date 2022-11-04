@@ -17,7 +17,7 @@ public class ChooseGameManager : MonoBehaviour
 
     public void RopeButtonClicked()
     {
-
+        SceneManager.LoadScene("ChooseStage");
     }
 
     public void TtakjiButtonClicked()
