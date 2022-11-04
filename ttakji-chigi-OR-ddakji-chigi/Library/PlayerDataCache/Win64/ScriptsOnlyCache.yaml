@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - Button
     - ChooseGameManager
     - End
     - EndGameManager
@@ -14,11 +15,11 @@ ScriptsOnlyBuild:
     - Up
     - Wall
     - Zone
+    - _1button
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
-    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
     - UnityEditor.Tilemaps.GridPaintingState
@@ -80,6 +81,8 @@ ScriptsOnlyBuild:
     - UnityEngine.Events.ArgumentCache
     - UnityEngine.Events.PersistentCallGroup
     - UnityEngine.Events.PersistentListenerMode
+    UnityEngine.IMGUIModule:
+    - UnityEngine.GUIStyle
     UnityEngine.TextCoreFontEngineModule:
     - UnityEngine.TextCore.FaceInfo
     - UnityEngine.TextCore.Glyph
@@ -126,6 +129,24 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: EndGameManager
     methodName: MainButtonClicked
+  - assembly: Assembly-CSharp
+    fullTypeName: Button
+    methodName: _1v1ButtonClicked
+  - assembly: Assembly-CSharp
+    fullTypeName: Button
+    methodName: _SoleButtonClicked
+  - assembly: Assembly-CSharp
+    fullTypeName: _1button
+    methodName: _2pattack
+  - assembly: Assembly-CSharp
+    fullTypeName: _1button
+    methodName: _1pattack
+  - assembly: Assembly-CSharp
+    fullTypeName: EndGameManager
+    methodName: RestartButtonClicked
+  - assembly: Assembly-CSharp
+    fullTypeName: EndGameManager
+    methodName: MainButtonClicked
   sceneClasses:
     Assets/Flower/Scenes/Flower.unity:
     - Class: 1
@@ -148,6 +169,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -165,17 +190,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3120}
     - Class: 114
-      Script: {instanceID: 3482}
+      Script: {instanceID: 3484}
     - Class: 114
-      Script: {instanceID: 6194}
+      Script: {instanceID: 6196}
     - Class: 114
-      Script: {instanceID: 6762}
+      Script: {instanceID: 6764}
     - Class: 114
-      Script: {instanceID: 7384}
+      Script: {instanceID: 7388}
     - Class: 114
-      Script: {instanceID: 8066}
+      Script: {instanceID: 8070}
     - Class: 114
-      Script: {instanceID: 9524}
+      Script: {instanceID: 9528}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -213,6 +238,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
@@ -228,23 +257,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3120}
     - Class: 114
-      Script: {instanceID: 3482}
+      Script: {instanceID: 3484}
     - Class: 114
-      Script: {instanceID: 3832}
+      Script: {instanceID: 3834}
     - Class: 114
-      Script: {instanceID: 3914}
+      Script: {instanceID: 3916}
     - Class: 114
-      Script: {instanceID: 6016}
+      Script: {instanceID: 6018}
     - Class: 114
-      Script: {instanceID: 6762}
+      Script: {instanceID: 6764}
     - Class: 114
-      Script: {instanceID: 6966}
+      Script: {instanceID: 6970}
     - Class: 114
-      Script: {instanceID: 7384}
+      Script: {instanceID: 7388}
     - Class: 114
-      Script: {instanceID: 8076}
+      Script: {instanceID: 8080}
     - Class: 114
-      Script: {instanceID: 9524}
+      Script: {instanceID: 9528}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -285,13 +314,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3120}
     - Class: 114
-      Script: {instanceID: 3482}
+      Script: {instanceID: 3484}
     - Class: 114
-      Script: {instanceID: 4216}
+      Script: {instanceID: 4218}
     - Class: 114
-      Script: {instanceID: 6762}
+      Script: {instanceID: 6764}
     - Class: 114
-      Script: {instanceID: 7384}
+      Script: {instanceID: 7388}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -329,6 +358,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 104
@@ -346,19 +377,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3120}
     - Class: 114
-      Script: {instanceID: 3482}
+      Script: {instanceID: 3484}
     - Class: 114
-      Script: {instanceID: 3914}
+      Script: {instanceID: 3916}
     - Class: 114
-      Script: {instanceID: 4768}
+      Script: {instanceID: 4770}
     - Class: 114
-      Script: {instanceID: 5102}
+      Script: {instanceID: 5104}
     - Class: 114
-      Script: {instanceID: 6016}
+      Script: {instanceID: 6018}
     - Class: 114
-      Script: {instanceID: 6762}
+      Script: {instanceID: 6764}
     - Class: 114
-      Script: {instanceID: 7384}
+      Script: {instanceID: 7388}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -377,6 +408,125 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
+    Assets/Rope/Scenes/1v1.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1620}
+    - Class: 114
+      Script: {instanceID: 2504}
+    - Class: 114
+      Script: {instanceID: 2858}
+    - Class: 114
+      Script: {instanceID: 3120}
+    - Class: 114
+      Script: {instanceID: 3236}
+    - Class: 114
+      Script: {instanceID: 3484}
+    - Class: 114
+      Script: {instanceID: 6018}
+    - Class: 114
+      Script: {instanceID: 6764}
+    - Class: 114
+      Script: {instanceID: 6970}
+    - Class: 114
+      Script: {instanceID: 7388}
+    - Class: 114
+      Script: {instanceID: 9528}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Rope/Scenes/ChooseStage.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1620}
+    - Class: 114
+      Script: {instanceID: 2858}
+    - Class: 114
+      Script: {instanceID: 3120}
+    - Class: 114
+      Script: {instanceID: 3484}
+    - Class: 114
+      Script: {instanceID: 6764}
+    - Class: 114
+      Script: {instanceID: 6842}
+    - Class: 114
+      Script: {instanceID: 7388}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Rope/Scenes/Sole.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
     Assets/Ttakji/Scenes/Ttakji.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -392,6 +542,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
@@ -403,17 +557,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3120}
     - Class: 114
-      Script: {instanceID: 3408}
+      Script: {instanceID: 3410}
     - Class: 114
-      Script: {instanceID: 3482}
+      Script: {instanceID: 3484}
     - Class: 114
-      Script: {instanceID: 6762}
+      Script: {instanceID: 6764}
     - Class: 114
-      Script: {instanceID: 7384}
+      Script: {instanceID: 7388}
     - Class: 114
-      Script: {instanceID: 8694}
+      Script: {instanceID: 8698}
     - Class: 114
-      Script: {instanceID: 9524}
+      Script: {instanceID: 9528}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -683,6 +837,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
     className: TestResultRendererCallback
+  - hash:
+      serializedVersion: 2
+      Hash: 5b58d0335166e53e5fd0e3e515ff4fa7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: _1button
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1100,6 +1260,12 @@ ScriptsOnlyBuild:
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Button
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: AnimatorMessageListener
@@ -1440,4 +1606,7 @@ ScriptsOnlyBuild:
   - Assets/Flower/Scenes/Flower.unity
   - Assets/Marble/Scenes/Marble.unity
   - Assets/Ttakji/Scenes/Ttakji.unity
-  playerPath: C:/Users/werwer/Desktop/ttakji-chigi-OR-ddakji-chigi.exe
+  - Assets/Rope/Scenes/ChooseStage.unity
+  - Assets/Rope/Scenes/1v1.unity
+  - Assets/Rope/Scenes/Sole.unity
+  playerPath: C:/Users/werwer/Desktop/please/ttakji-chigi-OR-ddakji-chigi.exe
